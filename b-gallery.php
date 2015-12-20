@@ -1,10 +1,20 @@
-
+<?php
+function showImage($src, $type = null) {
+	?>
+	<div class="col-md-3" data-type="<?php print $type ?>">
+		<a href="<?php print $src ?>" target="_blank">
+			<img src="<?php print BGALLERY_URL ?>thumbs/galleries/<?php print BGALLERY_CURRENT.'/'.$src ?>" class="img-thumbnail">
+			<strong><?php print preg_replace("#(.*)\.(jpg|png)$#i", "\\1", basename($src)) ?></strong>
+		</a>
+	</div>
+	<?php
+}
+?>
 	<div class="row filters">
 		<form class="form-inline">
 			<div class="col-md-4">
 				<div class="form-group">
-					<label for="filter-search">Email address</label>
-					<input type="text" class="form-control input-sm" id="filter-search">
+					<input type="text" class="form-control input-sm" id="filter-search" placeholder="search...">
 				</div>
 			</div>
 			<div class="col-md-4 col-md-offset-4">
@@ -28,21 +38,16 @@
 
 	<div class="row items">
 		<?php
-
 		foreach(glob('*') as $dir):
 			if ( is_dir($dir)):
-				foreach(glob("$dir/*.jpg") as $img):
-					?>
-					<div class="col-md-3" data-type="<?php print $dir ?>">
-						<a href="<?php print $img ?>">
-							<img src="<?php print $img ?>" class="img-thumbnail">
-							<strong><?php print preg_replace("#/(.*)\.jpg$#", "\\1", $img) ?></strong>
-						</a>
-					</div>
-					<?php
-					endforeach;
+				foreach(glob("$dir/*.*") as $img):
+					showImage($img, $dir);
+				endforeach;
+			else:
+				if ( ! preg_match("#\.php$#", $dir) && ! preg_match("#^thumb#", $dir)):
+					showImage($dir);
+				endif;
 			endif;
 		endforeach;
-
 		?>
 	</div>

@@ -3,6 +3,7 @@ require_once('../../settings.php');
 
 require_once(BGALLERY_PATH.'header.php');
 
+define('BGALLERY_CURRENT', basename(dirname(__FILE__)));
 
 ?>
 <p>

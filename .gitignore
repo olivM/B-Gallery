@@ -2,3 +2,6 @@
 .DS_Store
 
 galleries/*/*/*.jpg
+galleries/*/*/*.png
+thumbs/
+galleries/E16/*.JPG
