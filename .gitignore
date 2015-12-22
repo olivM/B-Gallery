@@ -3,5 +3,5 @@
 
 galleries/*/*/*.jpg
 galleries/*/*/*.png
-thumbs/
 galleries/E16/*.JPG
+thumbs/galleries/
