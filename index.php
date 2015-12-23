@@ -15,7 +15,7 @@ require_once('header.php');
 		<div class="col-md-3">
 			<a href="<?php print $gallery ?>">
 				<img src="<?php print $gallery ?>/thumb.jpg" class="img-thumbnail">
-				<strong><?php print preg_replace("#^galleries/#", "", $gallery) ?></strong>
+				<!-- <strong><?php print preg_replace("#^galleries/#", "", $gallery) ?></strong> -->
 			</a>
 		</div>
 		<?php

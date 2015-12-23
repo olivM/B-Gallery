@@ -11,6 +11,8 @@
 
 		<link rel="stylesheet" href="<?php print BGALLERY_URL ?>/style.css">
 
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+
 </head>
  <body>
 

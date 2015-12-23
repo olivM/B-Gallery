@@ -1,5 +1,8 @@
 body {
 	padding: 20px;
+
+	font-family: 'Open Sans Condensed', sans-serif;
+
 }
 a {
 	color: #373a3c;
@@ -7,3 +10,4 @@ a {
 .items img {
 	display: block;
 }
+

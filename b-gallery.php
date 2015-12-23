@@ -2,6 +2,7 @@
 function showImage($src, $type = null) {
 	?>
 	<div class="col-md-3" data-type="<?php print $type ?>">
+		<!-- <a href="<?php print BGALLERY_URL.'/image.php?img='.BGALLERY_CURRENT.'/'.$src ?>" target="_blank"> -->
 		<a href="<?php print $src ?>" target="_blank">
 			<img src="<?php print BGALLERY_URL ?>thumbs/galleries/<?php print BGALLERY_CURRENT.'/'.$src ?>" class="img-thumbnail">
 			<strong><?php print preg_replace("#(.*)\.(jpg|png)$#i", "\\1", basename($src)) ?></strong>
@@ -11,11 +12,9 @@ function showImage($src, $type = null) {
 }
 ?>
 	<div class="row filters">
-		<form class="form-inline">
+		<form>
 			<div class="col-md-4">
-				<div class="form-group">
-					<input type="text" class="form-control input-sm" id="filter-search" placeholder="search...">
-				</div>
+				<input type="text" class="form-control form-control-sm" id="filter-search" placeholder="search...">
 			</div>
 			<div class="col-md-4 col-md-offset-4">
 
