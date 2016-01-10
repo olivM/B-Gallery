@@ -30,29 +30,20 @@
 
 jQuery(function() {
 
-	var layzr = new Layzr({
-		container: '.items',
-		selector: '[data-layzr]',
-		attr: 'data-layzr',
-		retinaAttr: 'data-layzr-retina',
-		bgAttr: 'data-layzr-bg',
-		hiddenAttr: 'data-layzr-hidden',
-		threshold: 0,
-		callback: function() {
-			console.log(this);
-		}
-	});
+	jQuery(".img-thumbnail").unveil(300);
 
 	jQuery('.btn').on('click', function() {
+		jQuery(this).find('i').toggleClass('fa-check');
 		setTimeout(function() {
 			if (jQuery('.active').length === 0 || jQuery('.active').length === jQuery('.btn').length) {
-				jQuery('.items > div').show();
+				jQuery('#filters').attr('class', 'filter-all');
 			} else {
+				jQuery('#filters').removeClass('filter-all');
 				jQuery('.btn').each(function() {
 					if (jQuery(this).hasClass('active')) {
-						jQuery('.items > [data-type="' + jQuery(this).data('filter') + '"]').show();
+						jQuery('#filters').addClass('filter-' + jQuery(this).data('filter'));
 					} else {
-						jQuery('.items > [data-type="' + jQuery(this).data('filter') + '"]').hide();
+						jQuery('#filters').removeClass('filter-' + jQuery(this).data('filter'));
 					}
 				});
 			}
@@ -62,7 +53,6 @@ jQuery(function() {
 	var inputText;
 	var $matching = $();
 
-	// Delay function
 	var delay = (function() {
 		var timer = 0;
 		return function(callback, ms) {
@@ -72,16 +62,10 @@ jQuery(function() {
 	})();
 
 	jQuery("#filter-search").keyup(function() {
-		// Delay function invoked to make sure user stopped typing
 		delay(function() {
 			inputText = jQuery("#filter-search").val().toLowerCase();
-			console.log(inputText);
-
-			// Check to see if input field is empty
 			if ((inputText.length) > 0) {
-				jQuery('.items > div').each(function() {
-					console.log(jQuery(this).find('strong').text());
-					// add item to be filtered out if input text matches items inside the title
+				jQuery('.item').each(function() {
 					if (jQuery(this).find('strong').text().toLowerCase().match(inputText)) {
 						jQuery(this).show();
 					} else {
@@ -89,13 +73,9 @@ jQuery(function() {
 					}
 				});
 			} else {
-				jQuery('.items > div').show();
+				jQuery('.item').show();
 			}
 		});
 	});
-
-	setTimeout(function() {
-		// jQuery('.filters .btn:first').click();
-	}, 250);
 
 });

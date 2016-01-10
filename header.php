@@ -13,8 +13,10 @@
 
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 </head>
  <body>
 
-	<h1><a href="<?php print BGALLERY_URL ?>">B Gallery</a></h1>
+	<h1><a href="<?php print BGALLERY_URL ?>">agnès b. gallery</a></h1>
 
