@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>agnès b. gallery</title>
+		<title>B-Gallery</title>
 
 		<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" crossorigin="anonymous">
 
@@ -18,5 +18,5 @@
 </head>
  <body>
 
-	<h1><a href="<?php print BGALLERY_URL ?>"><img src="<?php print BGALLERY_URL ?>logo.jpg"></a></h1>
+	<h1><a href="<?php print BGALLERY_URL ?>">agnès b. gallery</a></h1>
 
